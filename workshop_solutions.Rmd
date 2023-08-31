@@ -9,9 +9,21 @@ This is my R markdown file.
 Loading Pacakges:
 ```{r}
 library(tidyverse)
+library(ggplot2)
 ```
 
 loading data:
 ```{r}
 data <- read.csv("raw_data/data.csv")
 ```
+
+Plotting the data:
+I have decided to plot weight on the x axis and temperature on the y axis.
+```{r}
+ggplot(data=data, aes(x=weight, y=TempC))+geom_point()+geom_abline()
+```
+
+I can do the same for volume of 02 which produces a lineaer relationship
+```{r}
+ggplot(data=data, aes(y=VO2_ml_per_h, x=weight))+geom_point()+geom_abline()
+````
